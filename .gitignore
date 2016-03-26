@@ -1,0 +1,11 @@
+# Do not need this project
+
+command_line/
+
+# Do not save java.class files
+
+*/out/
+*/.idea/
+
+#Do not save .iml files
+*.iml

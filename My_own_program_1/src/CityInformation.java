@@ -11,8 +11,8 @@ public class CityInformation {
 
     public String getCityInformation() {
         String s = "Country " + country + ";\n" +
-                "Information about city " + name + ";\n" +
-                "Population - "+population+";\n"+
+                "\nInformation about city " + name + ":\n" +
+                "\nPopulation - "+population+";\n"+
                 "Square - " + square +"sq.km" + ";\n" +
                 "Was founded in " + wasFounded + ";\n" +
                 name +" has " + quantityOfAirports + " airport(s).";

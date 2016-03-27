@@ -35,15 +35,28 @@ public class Run {
                 }
                 switch (answerTodo.toLowerCase()) {
                     case "set":
-                        System.out.println("You want to set information about City");           // now this part is undone
+                        System.out.println("You want to set information about City \n");           // now this part is testing
+                        System.out.println("Input the city's name, population, square, wasFounded, quantityOfAirports (ENTER between data)");
+                        String name = reader.readLine();
+                        int population = Integer.parseInt(reader.readLine());
+                        Double square = Double.parseDouble(reader.readLine());
+                        int wasFounded = Integer.parseInt(reader.readLine());
+                        int quantityOfAirports = Integer.parseInt(reader.readLine());
+                        list.add(new CityInformation(name, population, square, wasFounded, quantityOfAirports));
                         break;
                     case "read":
                         System.out.println("Please type a city's NAME");
                         String cityName = reader.readLine();
+
+                        //make array from city's name in lowerCase
+
                         String[] arrayCityNames = new String[list.size()];
                         for (int i =0; i<list.size(); i++) {
                             arrayCityNames[i] = list.get(i).name.toLowerCase();
                         }
+
+                        //checking for presence of inputed city's name in array of city's names
+
                         if (!Arrays.asList(arrayCityNames).contains(cityName.toLowerCase())) {
                             System.out.println("Sorry, but information about " + cityName + " is absent(");
                         } else {

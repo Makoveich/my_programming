@@ -12,6 +12,7 @@ public class Run {
     static SumyInformation sumy = new SumyInformation("Sumy",292139, 98,1652, 1);
     static ZhytomyrInformation zhytomyr = new ZhytomyrInformation("Zhytomyr", 270046, 61, 884, 1);
     static KyivInformation kyiv = new KyivInformation("Kyiv", 2904381, 847.46, 1500, 2 );
+    static KharkivInformation kharkiv = new KharkivInformation("Kharkiv", 1431000,350, 1630, 1);
     static ArrayList<CityInformation> list = new ArrayList<>();
 
 
@@ -23,6 +24,7 @@ public class Run {
         list.add(kyiv);
         list.add(zhytomyr);
         list.add(sumy);
+        list.add(kharkiv);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("What do you  want to do (SET information or READ)");
         try {

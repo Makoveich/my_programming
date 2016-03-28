@@ -1,7 +1,7 @@
 /**
  * Created by Mak on 25.03.2016.
  */
-public class CityInformation {
+public class CityInformation implements HowOldIn{
     static String country = "Ukraine";
     String name;
     int population;
@@ -15,6 +15,15 @@ public class CityInformation {
         this.square = square;
         this.wasFounded = wasFounded;
         this.quantityOfAirports = quantityOfAirports;
+    }
+
+    public int howOldIn(int year) {
+        int d = year - wasFounded;
+        if (d < 0) {
+            d = defaultYear - wasFounded;
+            System.out.println("year "+ year + " is changed to " + defaultYear);
+        }
+        return d;
     }
 
     public String getCityInformation() {

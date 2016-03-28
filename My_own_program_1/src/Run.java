@@ -26,10 +26,10 @@ public class Run {
         list.add(sumy);
         list.add(kharkiv);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("What do you  want to do (SET information or READ)");
         try {
 
             while (true) {
+                System.out.println("What do you  want to do (SET information or READ)");
                 String answerTodo = reader.readLine();
                 if (answerTodo.equals("")) {
                     System.out.println("Goodbye");
@@ -57,7 +57,7 @@ public class Run {
                             arrayCityNames[i] = list.get(i).name.toLowerCase();
                         }
 
-                        //checking for presence of inputed city's name in array of city's names
+                        //checking for presence of input city's name in array of city's names
 
                         if (!Arrays.asList(arrayCityNames).contains(cityName.toLowerCase())) {
                             System.out.println("Sorry, but information about " + cityName + " is absent(");
@@ -71,7 +71,26 @@ public class Run {
                             }
                         }
 
+
+
+                        // Adding howOldIn method for current city
+                        System.out.println("For return to main menu type press ENTER, \n For \"How old\" type howold.");
+                        String answer1 = reader.readLine();
+                        if (answer1.toLowerCase().equals("howold")) {
+                            for (CityInformation city : list) {
+                                if (city.name.toLowerCase().equals(cityName.toLowerCase())) {
+                                    System.out.println("Type the year, please...");
+
+                                    // Interface HowOldIn apply to current city
+
+                                    System.out.println(city.name + " age is " + city.howOldIn(Integer.parseInt(reader.readLine())));
+                                }
+
+                            }
+                        }
                         break;
+
+
                     default:
                         System.out.println("You should type SET or READ only....\n Try again.");
                 }

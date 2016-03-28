@@ -12,6 +12,7 @@ public class Run {
     static SumyInformation sumy = new SumyInformation("Sumy",292139, 98,1652, 1);
     static ZhytomyrInformation zhytomyr = new ZhytomyrInformation("Zhytomyr", 270046, 61, 884, 1);
     static KyivInformation kyiv = new KyivInformation("Kyiv", 2904381, 847.46, 1500, 2 );
+    static KharkivInformation kharkiv = new KharkivInformation("Kharkiv", 1431000,350, 1630, 1);
     static ArrayList<CityInformation> list = new ArrayList<>();
 
 
@@ -23,6 +24,7 @@ public class Run {
         list.add(kyiv);
         list.add(zhytomyr);
         list.add(sumy);
+        list.add(kharkiv);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("What do you  want to do (SET information or READ)");
         try {
@@ -35,15 +37,28 @@ public class Run {
                 }
                 switch (answerTodo.toLowerCase()) {
                     case "set":
-                        System.out.println("You want to set information about City");           // now this part is undone
+                        System.out.println("You want to set information about City \n");           // now this part is testing
+                        System.out.println("Input the city's name, population, square, wasFounded, quantityOfAirports (ENTER between data)");
+                        String name = reader.readLine();
+                        int population = Integer.parseInt(reader.readLine());
+                        Double square = Double.parseDouble(reader.readLine());
+                        int wasFounded = Integer.parseInt(reader.readLine());
+                        int quantityOfAirports = Integer.parseInt(reader.readLine());
+                        list.add(new CityInformation(name, population, square, wasFounded, quantityOfAirports));
                         break;
                     case "read":
                         System.out.println("Please type a city's NAME");
                         String cityName = reader.readLine();
+
+                        //make array from city's name in lowerCase
+
                         String[] arrayCityNames = new String[list.size()];
                         for (int i =0; i<list.size(); i++) {
                             arrayCityNames[i] = list.get(i).name.toLowerCase();
                         }
+
+                        //checking for presence of inputed city's name in array of city's names
+
                         if (!Arrays.asList(arrayCityNames).contains(cityName.toLowerCase())) {
                             System.out.println("Sorry, but information about " + cityName + " is absent(");
                         } else {

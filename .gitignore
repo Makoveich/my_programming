@@ -1,12 +1,2 @@
-# Do not need this projects
-
-command_line/
-lesson6/
-
-# Do not save java.class files
 
 */out/
-*/.idea/
-
-#Do not save .iml files
-*.iml

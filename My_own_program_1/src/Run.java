@@ -25,6 +25,7 @@ public class Run {
         list.add(zhytomyr);
         list.add(sumy);
         list.add(kharkiv);
+        WindowBlank blank = new WindowBlank();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
 

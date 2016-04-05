@@ -38,9 +38,11 @@ public class WindowBlank extends JFrame {
         mainFrame.setSize(300, 200);
 
         // NORTH part
+
         northPanel = new JPanel();
         cityLabel = new JLabel("City :");
         cityTextField = new JTextField(10);
+        cityTextField.setToolTipText("Insert City's name, please");
         northPanel.add(cityLabel);
         northPanel.add(cityTextField);
         mainPanel.add(northPanel, BorderLayout.NORTH);
@@ -59,6 +61,7 @@ public class WindowBlank extends JFrame {
                 GridBagConstraints.BOTH, new Insets(2, 2, 2, 2), 0, 0));
         countryTextField = new JTextField(10);
         countryTextField.setEditable(false);
+        countryTextField.setToolTipText("Not editable");
         countryTextField.setText("Ukraine");
         centralPanel.add(countryTextField, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH, new Insets(2, 2, 2, 2), 0, 0));
